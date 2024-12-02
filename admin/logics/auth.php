@@ -16,9 +16,9 @@ if (isset($_POST["signupbtn"])) {
 
         $sql = "INSERT INTO `admins` (`admin_id`, `admin_name`, `admin_email`, `admin_password`, `admin_status`, `admin_date`) VALUES (NULL, '{$admin_username}', '{$admin_email}', '{$admin_password}', '0', current_timestamp());";
         if (mysqli_query($connection, $sql)) {
-            header("Location: http://localhost/pakfixer/admin/signup.php?error=yes");
+            header("Location: ".BASE_URL."signup.php?error=yes");
         } else {
-            header("Location: http://localhost/pakfixer/admin/signup.php?error=no");
+            header("Location: ".BASE_URL."signup.php?error=no");
         }
     }
 } else if (isset($_POST["loginbtn"])) {
@@ -29,7 +29,7 @@ if (isset($_POST["signupbtn"])) {
     $sql = "SELECT * FROM admins WHERE admin_email = '{$email}' AND admin_password='{$password}'";
     $row = mysqli_query($connection, $sql);
     if (mysqli_num_rows($row) > 0) {
-        header("Location: http://localhost/PakFixer/admin/dashboard.php");
+        header("Location: ".BASE_URL."dashboard.php");
 
         while ($data = mysqli_fetch_assoc($row)) {
           
@@ -40,6 +40,6 @@ if (isset($_POST["signupbtn"])) {
             $_SESSION["status"] = $data["admin_status"];
         }
     } else {
-        header("Location: http://localhost/PakFixer/admin/index.php?alert=error");
+        header("Location: ".BASE_URL."index.php?alert=error");
     }
 }

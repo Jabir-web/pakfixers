@@ -27,7 +27,7 @@ include("../components/sidebar.php");
                                 <h5 class="card-title">Add New Card</h5>
                             </div>
                             <div class="card-body">
-                                <form id="form-card-info">
+                                <form id="form-card-info" action="<?php echo BASE_URL ?>logics/skill_logic.php" method="post">
                                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                                         <li class="nav-item" role="presentation">
                                             <a class="nav-link active" id="personal-tab" data-bs-toggle="tab" href="#personal" role="tab" aria-controls="personal" aria-selected="true">Personal Info</a>
@@ -54,7 +54,7 @@ include("../components/sidebar.php");
                                                         </div>
                                                         <div class="container my-3">
                                                             <label for="categoryDropdown" class="form-label">Category</label>
-                                                            <select id="categoryDropdown" class="form-select">
+                                                            <select id="categoryDropdown" class="form-select" name="category">
                                                                 <option value="" disabled selected>Select a Profession</option>
                                                                 <option value="plumber">Plumber</option>
                                                                 <option value="mechanic">Mechanic</option>
@@ -103,7 +103,7 @@ include("../components/sidebar.php");
                                                         </div>
                                                         <div class="mb-3">
             <label for="experienceDropdown" class="form-label">Experience</label>
-            <select id="experienceDropdown" class="form-select">
+            <select id="experienceDropdown" class="form-select" name="level">
                 <option value="" disabled selected>Select Experience Level</option>
                 <option value="1">1 year</option>
                 <option value="2">2 years</option>
@@ -136,18 +136,18 @@ include("../components/sidebar.php");
                                                         <div class="col-12">
                                                             <div class="form-group">
                                                                 <label for="contact-number">Whatsapp Number</label>
-                                                                <input type="text" id="contact-number" class="form-control" name="contact-number" placeholder="Enter whatsapp number">
+                                                                <input type="text" id="contact-number" class="form-control" name="whatsapp-number" placeholder="Enter whatsapp number">
                                                             </div>
                                                         </div>
                                                         <div class="col-12">
                                                             <div class="form-group">
-                                                                <label for="contact-number">Contact Number</label>
-                                                                <input type="text" id="contact-number" class="form-control" name="contact-number" placeholder="Enter addrress">
+                                                                <label for="contact-number">Address</label>
+                                                                <input type="text" id="contact-number" class="form-control" name="address" placeholder="Enter addrress">
                                                             </div>
                                                         </div>
                                                         <div class="col-12 d-flex justify-content-end">
                                                             <button type="button" class="btn btn-secondary me-1 mb-1" id="contactback">Back</button>
-                                                            <button type="submit" class="btn btn-success me-1 mb-1" id="submit-btn">Submit</button>
+                                                            <button type="submit" class="btn btn-success me-1 mb-1" name="card-form-btn" id="submit-btn">Submit</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -257,10 +257,6 @@ include("../components/sidebar.php");
                 $("#experience").addClass("show active");
             });
 
-            // Submit Logic
-            $(document).on("submit", "#form-card-info", function(e) {
-                e.preventDefault();
-                alert("Form submitted successfully!");
-            });
+      
         });
     </script>

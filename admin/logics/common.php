@@ -1,5 +1,5 @@
 <?php
-define('BASE_URL', 'http://localhost/PakFixer/admin/');
+define('BASE_URL', 'http://localhost/pakfixers/admin/');
 $connection = mysqli_connect("localhost", "root", "", "pakfixer");
 
 session_start();
