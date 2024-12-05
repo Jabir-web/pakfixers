@@ -74,7 +74,7 @@ include("../components/sidebar.php");
                                                             </select>
                                                         </div>
                                                         <div class="col-12 my-3">
-                                                            
+
                                                             <div class="form-group">
                                                                 <label for="des">Description</label>
                                                                 <textarea id="des" class="form-control" name="description" placeholder="Description" rows="5"></textarea>
@@ -102,17 +102,17 @@ include("../components/sidebar.php");
                                                             </div>
                                                         </div>
                                                         <div class="mb-3">
-            <label for="experienceDropdown" class="form-label">Experience</label>
-            <select id="experienceDropdown" class="form-select" name="level">
-                <option value="" disabled selected>Select Experience Level</option>
-                <option value="1">1 year</option>
-                <option value="2">2 years</option>
-                <option value="3">3 years</option>
-                <option value="4">4 years</option>
-                <option value="5">5 years</option>
-                <option value="5+">5+ years</option>
-            </select>
-        </div>
+                                                            <label for="experienceDropdown" class="form-label">Experience</label>
+                                                            <select id="experienceDropdown" class="form-select" name="level">
+                                                                <option value="" disabled selected>Select Experience Level</option>
+                                                                <option value="1">1 year</option>
+                                                                <option value="2">2 years</option>
+                                                                <option value="3">3 years</option>
+                                                                <option value="4">4 years</option>
+                                                                <option value="5">5 years</option>
+                                                                <option value="5+">5+ years</option>
+                                                            </select>
+                                                        </div>
                                                         <div class="col-12 d-flex justify-content-end">
                                                             <button type="button" class="btn btn-secondary me-1 mb-1" id="expback">Back</button>
                                                             <button type="button" class="btn btn-primary me-1 mb-1" id="expnext">Next</button>
@@ -257,6 +257,13 @@ include("../components/sidebar.php");
                 $("#experience").addClass("show active");
             });
 
-      
+
         });
+    </script>
+
+    <?php include('alert.php'); ?>
+    <script>
+        $(".swal-button").click(function() {
+            window.location.href = <?php echo BASE_URL ?> 'pages/add_skill_card.php'
+        })
     </script>

@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="<?php echo BASE_URL ?>assets/vendors/bootstrap-icons/bootstrap-icons.css">
 <link rel="stylesheet" href="<?php echo BASE_URL ?>assets/css/app.css">
 <link rel="shortcut icon" href="<?php echo BASE_URL ?>assets/images/favicon.svg" type="image/x-icon">
+<link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
 </head>
 
 <body>
@@ -56,7 +57,7 @@
                                 <a href="<?php echo BASE_URL; ?>pages/add_skill_card.php">Add Skill Card</a>
                                 </li>
                                 <li class="submenu-item ">
-                                    <a href="component-badge.html">Total Skill Card</a>
+                                    <a href="<?php echo BASE_URL; ?>pages/total_skill_card.php">Total Skill Card</a>
                                 </li>
                                
                             </ul>
