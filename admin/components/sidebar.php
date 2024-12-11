@@ -66,7 +66,7 @@
                       
                         <?php if (isset($_SESSION["status"])) {
                             if ($_SESSION["status"]==0) {
-                                echo ' <li class="sidebar-item  has-sub">
+                                echo '<li class="sidebar-item  has-sub">
                             <a href="#" class="sidebar-link">
                                 <i class="bi bi-bar-chart-fill"></i>
                                 <span>Support</span>

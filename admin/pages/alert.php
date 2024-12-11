@@ -1,12 +1,19 @@
 <?php
     if (isset($_GET['status'])) {
+        $msg = $_GET['msg'];
         if ($_GET['status']==true) {
             echo '<script>
-            swal("Congratulation!", "'.$_GET['msg'].'", "success")
+           Swal.fire({
+  position: "top-end",
+  icon: "success",
+  title: "'.$msg.'",
+  showConfirmButton: false,
+  timer: 1500
+});
             </script>';
         }elseif ($_GET['status']==false) {
             echo '<script>
-            swal("Oops!", "'.$_GET['msg'].'", "error")
+            Swal.fire("error!");
             </script>';
         }
     }

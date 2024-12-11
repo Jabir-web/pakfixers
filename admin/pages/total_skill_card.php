@@ -31,7 +31,7 @@ include("../components/sidebar.php");
                                 <tbody>
                                     <?php
 
-                                    $sql = "SELECT * FROM skillcards";
+                                    $sql = "SELECT * FROM skillcards WHERE skill_user_id = '{$userid}'";
                                     $data = mysqli_query($connection, $sql);
                                     if (mysqli_num_rows($data) > 0) {
                                         while ($row = mysqli_fetch_assoc($data)) {
@@ -74,8 +74,8 @@ include("../components/sidebar.php");
 
     <?php
     include("../components/footer.php")
-
     ?>
+    <?php include('alert.php'); ?>
 
        <script>
     function confirmDelete(skillId) {

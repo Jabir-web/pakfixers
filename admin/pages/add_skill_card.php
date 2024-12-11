@@ -11,7 +11,17 @@ include("../components/sidebar.php");
 
 ?>
 
+<!-- ------------------------------- Count Card Logic ----------------------------- -->
+ <?php
+ $userid=$_SESSION["id"];
+ $sql ="SELECT * FROM skillcards WHERE skill_user_id = '{$userid}'";
+ $usercarddata=mysqli_query($connection,$sql);
+ $rows=mysqli_num_rows($usercarddata);
 
+
+ 
+ ?>
+<!-- ------------------------------- Count Card Logic ----------------------------- -->
 
 
 
@@ -24,6 +34,14 @@ include("../components/sidebar.php");
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
+                                <?php
+                                 if ($rows > 3) {
+                                    $msg='Your limit Has Reached';
+                                    echo '<script>window.location.href = "' . BASE_URL . 'pages/total_skill_card.php?status=true&msg='.$msg.'";</script>';
+                                    exit;
+                                }
+                                
+                                ?>
                                 <h5 class="card-title">Add New Card</h5>
                             </div>
                             <div class="card-body">
