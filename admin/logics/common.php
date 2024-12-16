@@ -4,5 +4,4 @@ $connection = mysqli_connect("localhost", "root", "", "pakfixer");
 
 session_start();
 
-
 ?>

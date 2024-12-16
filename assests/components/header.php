@@ -37,13 +37,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./contact.html">Contact</a>
+              <a class="nav-link" href="./contact.php">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./about.html">About</a>
+              <a class="nav-link" href="./about.php">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Privacy & Policy</a>
@@ -284,89 +284,4 @@
       <!-- End of Filter Section -->
 
       <!-- Placeholder for Skill Cards (col-9) -->
-      <div class="col-lg-9 col-sm-12">
-        <div class="topbar">
-          <input type="text" class="animated-input" placeholder="Search...">
-          <button class="search-btn">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-
-
-
-        <!-- ---card-section----- -->
-        <div class="card-section   ">
-          <div class="row  ">
-            <div class="col-lg-4 col-sm-6 col-xs-12 p-3  rounded g-3 ">
-              <a href="">
-                <div class="skill-card  p-3  rounded g-3"> <img class="w-100 rounded" src="./assests/images/one.jpg"
-                    alt="">
-                  <div class="box">
-                    <div class="label">TOP RATED</div>
-                  </div>
-                  <h3 class="my-1"><b>M.SALMAN</b></h3>
-                  <div class="text-primary my-">Programmer</span>
-                    <div class="star">
-                      <i class="fas fa-star text-warning "></i>
-                      <i class="fas fa-star text-warning "></i>
-                      <i class="fas fa-star text-warning "></i>
-                      <i class="fas fa-star text-warning "></i>
-                      <i class="fas fa-star text-warning "></i>
-                    </div>
-                    <p class="my-3"><i class="fas fa-map-marker-alt "></i><span class="mx-2 ">Gulshan e Maymar Sector
-                        Z</span></p>
-
-                  </div>
-                  <a href="./skillman.html" class="btn btn-danger mt-3 col-12 p-1">View More</a>
-                </div>
-              </a>
-            </div>
-
-
-          </div>
-
-        </div>
-
-
-
-      </div>
-
-    </div>
-  </div>
-  <footer class="footer bg-primary text-white">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 col-md-4 col-12 mb-4">
-          <h4>About Us</h4>
-          <p>Salman is a passionate programmer who thrives on solving complex problems through code. With
-            expertise in various programming languages, he enjoys creating innovative software
-            solutions. Always eager to learn, he embraces challenges that enhance his skills and
-            contribute to impactful projects.</p>
-        </div>
-
-        <div class="col-lg-4 col-md-4 col-12 text-center mb-4">
-          <b>
-            <a class="navbar-brand" href="#">
-              <span class="text-success">PaK</span>Fixer
-            </a>
-          </b>
-          <p>&copy; 2024 PakFixer. All rights reserved.</p>
-        </div>
-
-        <div class="col-lg-4 col-md-4 col-12">
-          <h4>Contact Us</h4>
-          <p>Email: Pakfixer@gmail.com</p>
-          <p>Phone: 15</p>
-          <p>Address: Gulshan e Maymar</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Custom JS -->
-  <script src="./assests/js/my.js"></script>
-  <!-- Bootstrap JS Bundle -->
-  <script src="./assests/bootsrap/bootstrap.bundle.js"></script>
-</body>
-
-</html>
+     

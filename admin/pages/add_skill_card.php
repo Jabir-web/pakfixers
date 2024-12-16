@@ -73,7 +73,7 @@ include("../components/sidebar.php");
                                                         <div class="container my-3">
                                                             <label for="categoryDropdown" class="form-label">Category</label>
                                                             <select id="categoryDropdown" class="form-select" name="category">
-                                                                <option value="" disabled selected>Select a Profession</option>
+                                                                
                                                                 <option value="plumber">Plumber</option>
                                                                 <option value="mechanic">Mechanic</option>
                                                                 <option value="electrician">Electrician</option>

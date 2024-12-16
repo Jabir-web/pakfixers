@@ -30,7 +30,7 @@ include("../components/sidebar.php");
                                 </thead>
                                 <tbody>
                                     <?php
-
+                                    $userid = $_SESSION["id"];
                                     $sql = "SELECT * FROM skillcards WHERE skill_user_id = '{$userid}'";
                                     $data = mysqli_query($connection, $sql);
                                     if (mysqli_num_rows($data) > 0) {
@@ -44,7 +44,6 @@ include("../components/sidebar.php");
                                                 <td><?php echo $row['skill_date'] ?></td>
                                                 <td>1</td>
                                                 <td>
-                                                    <a href=""><i class="btn btn-outline-success">Edit</i></a>
                                                     <a onclick="confirmDelete(<?php echo $row['skill_id'] ?>)"><i class="btn btn-outline-danger">Delete</i></a>
                                                 </td>
                                             </tr>
@@ -72,62 +71,64 @@ include("../components/sidebar.php");
     </div>
 
 
+
     <?php
     include("../components/footer.php")
     ?>
     <?php include('alert.php'); ?>
 
-       <script>
-    function confirmDelete(skillId) {
-        const swalWithBootstrapButtons = Swal.mixin({
-            customClass: {
-                confirmButton: "btn btn-success",
-                cancelButton: "btn btn-danger"
-            },
-            buttonsStyling: false
-        });
+    <script>
+        function confirmDelete(skillId) {
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: "btn btn-success",
+                    cancelButton: "btn btn-danger"
+                },
+                buttonsStyling: false
+            });
 
-        swalWithBootstrapButtons.fire({
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonText: "Yes, delete it!",
-            cancelButtonText: "No, cancel!",
-            reverseButtons: true
-        }).then((result) => {
-            if (result.isConfirmed) {
-                // Perform deletion via AJAX
-                $.ajax({
-                    url: "../logics/delete_skillcard.php",
-                    type: "POST",
-                    data: { sid: skillId },
-                    success: function (response) {
-                        swalWithBootstrapButtons.fire({
-                            title: "Deleted!",
-                            text: "The skill card has been deleted.",
-                            icon: "success"
-                        }).then(() => {
-                            // Reload the page to update the table
-                            location.reload();
-                        });
-                    },
-                    error: function () {
-                        swalWithBootstrapButtons.fire({
-                            title: "Error!",
-                            text: "There was an error deleting the skill card.",
-                            icon: "error"
-                        });
-                    }
-                });
-            } else if (result.dismiss === Swal.DismissReason.cancel) {
-                swalWithBootstrapButtons.fire({
-                    title: "Cancelled",
-                    text: "Your skill card is safe.",
-                    icon: "error"
-                });
-            }
-        });
-    }
-</script>
-
+            swalWithBootstrapButtons.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonText: "Yes, delete it!",
+                cancelButtonText: "No, cancel!",
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Perform deletion via AJAX
+                    $.ajax({
+                        url: "../logics/delete_skillcard.php",
+                        type: "POST",
+                        data: {
+                            sid: skillId
+                        },
+                        success: function(response) {
+                            swalWithBootstrapButtons.fire({
+                                title: "Deleted!",
+                                text: "The skill card has been deleted.",
+                                icon: "success"
+                            }).then(() => {
+                                // Reload the page to update the table
+                                location.reload();
+                            });
+                        },
+                        error: function() {
+                            swalWithBootstrapButtons.fire({
+                                title: "Error!",
+                                text: "There was an error deleting the skill card.",
+                                icon: "error"
+                            });
+                        }
+                    });
+                } else if (result.dismiss === Swal.DismissReason.cancel) {
+                    swalWithBootstrapButtons.fire({
+                        title: "Cancelled",
+                        text: "Your skill card is safe.",
+                        icon: "error"
+                    });
+                }
+            });
+        }
+    </script>

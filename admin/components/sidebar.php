@@ -1,3 +1,11 @@
+<?php
+
+if (!isset($_SESSION['id'])) {
+    header("Location: http://localhost/pakfixers/admin/");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -77,6 +85,9 @@
                                 </li>
                                 <li class="submenu-item ">
                                     <a href="ui-chart-apexcharts.html">Feedback</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href="'.BASE_URL.'/logics/logout.php">Logout</a>
                                 </li>
                             </ul>
                         </li>';
