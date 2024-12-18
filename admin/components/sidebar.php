@@ -3,7 +3,7 @@
 if (!isset($_SESSION['id'])) {
     header("Location: http://localhost/pakfixers/admin/");
 }
-
+session_start();
 ?>
 
 <!DOCTYPE html>

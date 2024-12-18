@@ -111,7 +111,7 @@
                     <div>
                       <div class="checkbox-wrapper-27">
                         <label class="checkbox">
-                          <input type="checkbox">
+                          <input type="checkbox" id="#fil" value="Electricions">
                           <span class="checkbox__icon"></span>
                           Electricians
                         </label>

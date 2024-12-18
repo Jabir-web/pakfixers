@@ -25,6 +25,23 @@
     $('#myTable').DataTable();
 } );
     </script>
+    <script>
+  $(document).ready(function () {
+    // Listen for checkbox changes
+    $('input[type="checkbox"]').on('change', function () {
+        
+        let value = $(this).val(); // Get parameter value
+
+        // Update URL
+        let url = new URL(window.location.href);
+        if ($(this).is(':checked')) {
+            window.location.href = url
+        } 
+    
+    });
+});
+
+</script>
  
 </body>
 
