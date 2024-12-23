@@ -52,11 +52,18 @@
 
           <!-- Right Aligned Navbar Links -->
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
-            <li class="nav-item">
-              <a class="nav-link" href="./admin/index.php">Log In <i class="fad fa-sign-in-alt mx-2"></i> </a>
-
-            </li>
+            <?php 
+            session_start();
+            if (isset($_SESSION['id'])) {
+              echo ' <li class="nav-item">
+              <a class="btn btn-primary" href="./admin/pages/dashboard.php">Dashboard <i class="fad fa-sign-in-alt mx-2"></i> </a>
+            </li>';
+            }else{
+              echo ' <li class="nav-item">
+              <a class="btn btn-dark" href="./admin/index.php">Login <i class="fad fa-sign-in-alt mx-2"></i> </a>
+            </li>';
+            } ?>
+           
           </ul>
         </div>
       </div>
